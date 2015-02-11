@@ -19,7 +19,7 @@
 #
 #/#############################################################################
 
-from openerp.osv import osv
+from openerp.osv import orm, fields
 import logging
 
 _logger = logging.getLogger(__name__)
@@ -29,7 +29,7 @@ from openerp.tools import config
 config['publisher_warranty_url'] = ''
 
 
-class publisher_warranty_contract(osv.osv):
+class publisher_warranty_contract(orm.Model):
     _inherit = 'publisher_warranty.contract'
 
     def update_notification(self, cr, uid, ids, cron_mode=True,
