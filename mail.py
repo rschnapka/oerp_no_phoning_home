@@ -19,12 +19,17 @@
 #
 #/#############################################################################
 
-from openerp.osv import osv
+from openerp.osv import orm, fields
 import logging
 
 _logger = logging.getLogger(__name__)
 
-class publisher_warranty_contract(osv.osv):
+from openerp.tools import config
+
+config['publisher_warranty_url'] = ''
+
+
+class publisher_warranty_contract(orm.Model):
     _inherit = 'publisher_warranty.contract'
 
     def update_notification(self, cr, uid, ids, cron_mode=True,
@@ -37,3 +42,7 @@ class publisher_warranty_contract(osv.osv):
 
 publisher_warranty_contract()
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+<<<<<<< HEAD
+
+=======
+>>>>>>> refs/remotes/origin/7.0
